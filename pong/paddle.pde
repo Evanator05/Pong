@@ -1,9 +1,4 @@
 class Paddle extends GameObject {
-  float x;
-  float y;
-  float w;
-  float h;
-  color colour;
   float speed = height;
   int upKey = 18;
   int downKey = 18;
@@ -21,22 +16,8 @@ class Paddle extends GameObject {
     this.ai = ai;
   }
   
-  float getX() {
-    return this.x;
-  }
-  
-  float getY() {
-    return this.y;
-  }
-  float getW() {
-    return this.w;
-  }
-  float getH() {
-    return this.h;
-  }
-  
-    color getColour() {
-    return this.colour;
+  void setAiMode(boolean aiMode) {
+    this.ai = aiMode;
   }
   
   GameObject getNearestBall() {
@@ -59,8 +40,8 @@ class Paddle extends GameObject {
   };
   
   void run(){
-    int dir = int(input.keys[downKey]) - int(input.keys[upKey]);
-    if (ai) {
+    int dir = int(input.keys[downKey]) - int(input.keys[upKey]); //gets the direction of buttons being pressed (up pressed = -1, down pressed = 1, none pressed = 0, both pressed = 0)
+    if (ai) {//if the ai is active then track the nearest ball position and set the move direction to that of the ball
       GameObject ball = getNearestBall();
       if (ball != null) {
       float ballPos = ball.getY();

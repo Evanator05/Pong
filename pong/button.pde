@@ -3,6 +3,7 @@ class Button {
   Action action;
   TextBox textBox;
   color buttonColour = color(255,255,255);
+  
   Button(int x, int y, int w, int h, String text, Action action) {
     this.x = x;
     this.y = y;
@@ -19,18 +20,17 @@ class Button {
     textBox.drawText();
   }
 
-  boolean inRect() {
+  boolean inRect() {//checks if the mouse is in the button
     boolean xCheck = (mouseX > this.x && mouseX < this.x + this.w);
     boolean yCheck = (mouseY > this.y && mouseY < this.y + this.h);
     return (xCheck && yCheck);
   }
 
-  void update(boolean mouseDown) {
-    if (inRect() && mouseDown) {
+  void update() {
+    if (inRect() && input.mouseClicked) {
+      println("working");
       click();
-    }
-    
-    
+    } 
   }
   
   void click() {
@@ -39,7 +39,6 @@ class Button {
     } catch(NullPointerException e) {
       println(e);
     }
-    
   }
 
 }

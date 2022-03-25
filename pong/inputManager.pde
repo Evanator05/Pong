@@ -3,7 +3,7 @@ class InputManager {
     boolean previous = false;
     boolean[] keys = new boolean[256];
     
-    boolean MousePressed() {
+    boolean updateMouse() {//ensures that the mouse only stays clicked for 1 frame
       if (mousePressed) {
         this.mouseClicked = !this.previous;
         this.previous = true;

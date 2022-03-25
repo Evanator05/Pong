@@ -42,7 +42,6 @@ class TextBox {
     this.textAlign[1] = vAlign;  
 }
 
-
   void setText(String t){
     this.text = t;
     calculateFontSize();
