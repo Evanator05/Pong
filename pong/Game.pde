@@ -40,7 +40,7 @@ class Game extends Scene {
     float x = (width-w)*0.5;
     int step = width/16;
     fill(255);
-    for (int y = 0; y < width; y += step) {
+    for (int y = 0; y < height; y += step) {
       rect(x,y+step*0.25, w, step*0.5);
     }
    //Draw Player Scores

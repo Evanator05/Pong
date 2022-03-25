@@ -9,7 +9,7 @@ class Explosion extends GameObject {
     this.x = x;
     this.y = y;
     for (int i = 0; i < particleCount; i++) {
-      particles.add(new Particle(this.x,this.y,random(30,200),random(360), this.lifeTime));
+      particles.add(new Particle(this.x,this.y,random(width/40,width/10),random(360), this.lifeTime));
     }
     
   }

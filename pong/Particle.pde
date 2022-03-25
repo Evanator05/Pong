@@ -11,7 +11,7 @@ class Particle extends GameObject {//used for the particles in the explosion obj
     this.angle = radians(angle);
     this.moveX = cos(this.angle)*this.speed;
     this.moveY = sin(this.angle)*this.speed;
-    this.side = 25;
+    this.side = width/80;
     this.lifeTime = lifeTime;
     this.startingLifetime = 255/lifeTime;
   }

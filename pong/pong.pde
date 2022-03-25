@@ -4,10 +4,16 @@ Time time = new Time();
 boolean Ai = true; //determines if the right paddle will be an AI or not
 
 void setup() {
+  //size(500,1000);
   fullScreen();
   frameRate(60);
   strokeWeight(0);
-  changeScene(new MainMenu());
+  if (width >= height) {
+    changeScene(new MainMenu());
+  } else {
+    changeScene(new ChangeScreen());
+  }
+  
 }
 void keyPressed() {input.keys[keyCode] = true;}
 void keyReleased() {input.keys[keyCode] = false;}
